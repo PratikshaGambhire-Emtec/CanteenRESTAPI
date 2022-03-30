@@ -27,11 +27,11 @@ namespace LunchChartWebAPI.Services
         public async Task<Menu> GetAsync(string id) =>
             await _itemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
-        public async Task CreateAsync(Menu newBook) =>
-            await _itemsCollection.InsertOneAsync(newBook);
+        public async Task CreateAsync(Menu newMenu) =>
+            await _itemsCollection.InsertOneAsync(newMenu);
 
-        public async Task UpdateAsync(string id, Menu updatedBook) =>
-              await _itemsCollection.ReplaceOneAsync(x => x.Id == id, updatedBook);
+        public async Task UpdateAsync(string id, Menu updatedMenu) =>
+              await _itemsCollection.ReplaceOneAsync(x => x.Id == id, updatedMenu);
 
         public async Task RemoveAsync(string id) =>
             await _itemsCollection.DeleteOneAsync(x => x.Id == id);
