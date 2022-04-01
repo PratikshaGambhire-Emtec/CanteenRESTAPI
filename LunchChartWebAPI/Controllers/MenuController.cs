@@ -19,10 +19,10 @@ namespace LunchChartWebAPI.Controllers
         public async Task<List<Menu>> Get() =>
             await _menusService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
-        public async Task<ActionResult<Menu>> Get(string id)
+        [HttpGet("{Day}")]
+        public async Task<ActionResult<Menu>> Get(string Day)
         {
-            var item = await _menusService.GetAsync(id);
+            var item = await _menusService.GetAsync(Day);
 
             if (item is null)
             {
