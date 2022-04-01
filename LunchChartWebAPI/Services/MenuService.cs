@@ -24,8 +24,8 @@ namespace LunchChartWebAPI.Services
         public async Task<List<Menu>> GetAsync() =>
          await _itemsCollection.Find(_ => true).ToListAsync();
 
-        public async Task<Menu> GetAsync(string id) =>
-            await _itemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        public async Task<Menu> GetAsync(string Day) =>
+            await _itemsCollection.Find(x => x.Day == Day).FirstOrDefaultAsync();
 
         public async Task CreateAsync(Menu newMenu) =>
             await _itemsCollection.InsertOneAsync(newMenu);
